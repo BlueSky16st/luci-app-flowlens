@@ -79,12 +79,24 @@ observed traffic. Invalid values, or values lower than 1, fall back to 7 days.
 ## Installation
 
 If you already have a built package, copy it to the router and install it with
-`opkg`:
+the package manager used by your firmware.
+
+For `opkg` based firmware:
 
 ```sh
 opkg update
 opkg install nlbwmon ip-full
 opkg install /tmp/luci-app-flowlens_*.ipk
+/etc/init.d/rpcd restart
+/etc/init.d/uhttpd restart
+```
+
+For `apk` based firmware:
+
+```sh
+apk update
+apk add nlbwmon ip-full
+apk add --allow-untrusted /tmp/luci-app-flowlens-*.apk
 /etc/init.d/rpcd restart
 /etc/init.d/uhttpd restart
 ```
@@ -135,6 +147,12 @@ find bin/packages -name 'luci-app-flowlens_*'
 ```
 
 Use an SDK that matches your router target, OpenWrt version, and package ABI.
+
+## Build On GitHub
+
+The repository includes `.github/workflows/build-package.yml` for release
+automation. It validates the frontend/backend and can build package artifacts
+from a matching OpenWrt or ImmortalWrt SDK URL.
 
 ## Frontend Development
 

@@ -66,12 +66,24 @@ config flowlens 'main'
 
 ## 安装
 
-如果已经有构建好的安装包，可以复制到路由器后使用 `opkg` 安装：
+如果已经有构建好的安装包，可以复制到路由器后使用固件对应的包管理器安装。
+
+`opkg` 固件：
 
 ```sh
 opkg update
 opkg install nlbwmon ip-full
 opkg install /tmp/luci-app-flowlens_*.ipk
+/etc/init.d/rpcd restart
+/etc/init.d/uhttpd restart
+```
+
+`apk` 固件：
+
+```sh
+apk update
+apk add nlbwmon ip-full
+apk add --allow-untrusted /tmp/luci-app-flowlens-*.apk
 /etc/init.d/rpcd restart
 /etc/init.d/uhttpd restart
 ```
@@ -122,6 +134,11 @@ find bin/packages -name 'luci-app-flowlens_*'
 ```
 
 SDK 需要与路由器目标平台、OpenWrt 版本和包 ABI 匹配。
+
+## 在 GitHub 上构建
+
+仓库包含 `.github/workflows/build-package.yml`，用于发布包的自动化构建。
+它会校验前端/后端，并可基于匹配的 OpenWrt 或 ImmortalWrt SDK URL 构建包产物。
 
 ## 前端开发
 
