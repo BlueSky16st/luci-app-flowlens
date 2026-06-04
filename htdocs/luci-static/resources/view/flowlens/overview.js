@@ -9,7 +9,7 @@ var callDevices = rpc.declare({
 	expect: { '': {} }
 });
 
-var assetVersion = '0.1.26';
+var assetVersion = '0.1.27';
 var languageStorageKey = 'flowlens.language';
 var languageMessages = {
 	zh: {
@@ -280,7 +280,7 @@ return view.extend({
 			app.mount(root, {
 				initialData: data || {},
 				fetchDevices: callDevices,
-				pollInterval: 1000
+				pollInterval: 2000
 			});
 		}).catch(function(error) {
 			dom.content(root, E('div', { 'class': 'flowlens-load-error' }, [

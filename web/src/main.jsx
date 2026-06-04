@@ -41,7 +41,7 @@ import {
 import './styles.css';
 
 const roots = new WeakMap();
-const appVersion = '0.1.26';
+const appVersion = '0.1.27';
 
 const fallbackFetcher = async () => ({
   devices: [],
@@ -387,7 +387,7 @@ function LanguageSelect({ language, onChange, t }) {
   );
 }
 
-function App({ initialData, fetchDevices, pollInterval = 1000 }) {
+function App({ initialData, fetchDevices, pollInterval = 2000 }) {
   const pendingScrollSnapshot = useRef(null);
   const [payload, setPayload] = useState(initialData || {});
   const [filter, setFilter] = useState('all');
