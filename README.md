@@ -2,6 +2,12 @@
 
 [简体中文](README.zh-CN.md)
 
+[![Build Package](https://github.com/BlueSky16st/luci-app-flowlens/actions/workflows/build-package.yml/badge.svg)](https://github.com/BlueSky16st/luci-app-flowlens/actions/workflows/build-package.yml)
+[![Version](https://img.shields.io/github/v/tag/BlueSky16st/luci-app-flowlens?label=version&color=0ea5e9)](https://github.com/BlueSky16st/luci-app-flowlens/tags)
+[![License](https://img.shields.io/github/license/BlueSky16st/luci-app-flowlens?color=22c55e)](LICENSE)
+![OpenWrt](https://img.shields.io/badge/OpenWrt-compatible-00B5E2)
+![LuCI](https://img.shields.io/badge/LuCI-app-6d5dfc)
+
 FlowLens is a LuCI application for OpenWrt that shows a clean realtime traffic
 view of devices on your LAN. It combines device presence, DHCP names, IP
 addresses, live throughput, and current `nlbwmon` accounting totals in a React

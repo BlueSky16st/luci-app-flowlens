@@ -2,6 +2,12 @@
 
 [English](README.md)
 
+[![Build Package](https://github.com/BlueSky16st/luci-app-flowlens/actions/workflows/build-package.yml/badge.svg)](https://github.com/BlueSky16st/luci-app-flowlens/actions/workflows/build-package.yml)
+[![Version](https://img.shields.io/github/v/tag/BlueSky16st/luci-app-flowlens?label=version&color=0ea5e9)](https://github.com/BlueSky16st/luci-app-flowlens/tags)
+[![License](https://img.shields.io/github/license/BlueSky16st/luci-app-flowlens?color=22c55e)](LICENSE)
+![OpenWrt](https://img.shields.io/badge/OpenWrt-compatible-00B5E2)
+![LuCI](https://img.shields.io/badge/LuCI-app-6d5dfc)
+
 FlowLens 是一个用于 OpenWrt 的 LuCI 应用，用来展示局域网设备的实时流量视图。它会把设备在线状态、DHCP 名称、IP 地址、实时上下行速率，以及当前 `nlbwmon` 统计周期累计流量整合到 LuCI 内的 React 界面中。
 
 路由器运行时保持轻量：FlowLens 只发布静态 LuCI 资源和一个小型 rpcd shell 后端。Node.js、npm、Vite、React 只在开发机重新构建前端 bundle 时需要，路由器上不需要安装这些工具。
