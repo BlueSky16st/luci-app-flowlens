@@ -11,6 +11,10 @@ The project is designed as a self-contained OpenWrt package: the router runs a
 small rpcd shell backend and static LuCI assets, while React/Vite are only used
 at development time to build the browser bundle.
 
+## Preview
+
+![FlowLens preview](docs/preview.jpg)
+
 ## Features
 
 - Online/offline device list with MAC address, IPv4, IPv6, and device name.
@@ -19,6 +23,7 @@ at development time to build the browser bundle.
   total upload rate.
 - Search, status filters, sortable table headers, and responsive card layout.
 - LuCI theme-aware UI with live dark/light mode switching.
+- Chinese and English UI modes with an in-page language selector.
 - Current `nlbwmon` accounting period display, including date range.
 - Conservative address selection:
   - IPv4 main display prefers the current DHCP lease.
@@ -192,7 +197,7 @@ If browser caching gets in the way during development, append a version query
 parameter to the page URL, for example:
 
 ```text
-/cgi-bin/luci/admin/status/flowlens?flowlens_v=0.1.23
+/cgi-bin/luci/admin/status/flowlens?flowlens_v=0.1.26
 ```
 
 ## Notes
@@ -206,4 +211,4 @@ parameter to the page URL, for example:
 
 ## License
 
-Apache-2.0
+MIT

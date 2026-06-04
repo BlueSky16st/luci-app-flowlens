@@ -6,6 +6,10 @@ FlowLens 是一个 LuCI 应用，用来把 OpenWrt 做成更直观的路由器�
 
 项目以独立 OpenWrt 包的方式组织：路由器上运行轻量的 rpcd shell 后端和静态 LuCI 资源；React/Vite 只在开发机上用于构建浏览器端 bundle，路由器运行时不需要 Node.js。
 
+## 预览
+
+![FlowLens 预览效果图](docs/preview.jpg)
+
 ## 功能
 
 - 在线/离线设备列表，包含 MAC 地址、IPv4、IPv6 和设备名。
@@ -13,6 +17,7 @@ FlowLens 是一个 LuCI 应用，用来把 OpenWrt 做成更直观的路由器�
 - 在线设备、离线设备、下载速率、上传速率汇总卡片。
 - 搜索、在线状态筛选、表头排序、响应式卡片视图。
 - 适配 LuCI 主题，并支持深色/浅色实时切换。
+- 支持中文和英文界面，并可在页面内通过语言下拉框切换。
 - 显示 `nlbwmon` 当前统计周期和年月日区间。
 - 更克制的地址选择策略：
   - IPv4 主显示优先使用当前 DHCP 租约。
@@ -177,7 +182,7 @@ node --check htdocs/luci-static/resources/view/flowlens/overview.js
 开发时如果遇到浏览器缓存，可以在页面 URL 后追加版本参数，例如：
 
 ```text
-/cgi-bin/luci/admin/status/flowlens?flowlens_v=0.1.23
+/cgi-bin/luci/admin/status/flowlens?flowlens_v=0.1.26
 ```
 
 ## 注意事项
@@ -188,4 +193,4 @@ node --check htdocs/luci-static/resources/view/flowlens/overview.js
 
 ## 许可证
 
-Apache-2.0
+MIT
